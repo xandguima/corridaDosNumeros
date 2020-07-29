@@ -260,7 +260,7 @@ function draw() {
     }
 //MOVIMENTO CAIXAS
     //loop Box
-   xBox = xBox-velDoJogo;
+   xBox = xBox-1;
    if (xBox < -190) {
      x=parseInt(random(99));
      y=parseInt(random(99));
@@ -269,7 +269,7 @@ function draw() {
    xBox = height;
     }
     //loop Box1
-   xBox1 = xBox1 -velDoJogo;
+   xBox1 = xBox1 -1;
    if (xBox1 < -190) {
     xFila2=parseInt(random(99));
     yFila2=parseInt(random(99));
@@ -320,7 +320,9 @@ function draw() {
     text(x,xBox+20,230);
     //caixa 2
    text(y,xBox+20,283);
+    //caixa 3
     text(z,xBox+20,330);
+    //caixa 4
     text(w,xBox+20,383);
     //numeros aleatorios fila 2 caixas
     //caixa 1 de cima pra baixo
@@ -338,6 +340,7 @@ function draw() {
     
     
 //colisão
+    //para fila 1
     if(xPerson==xBox){
       if(yPerson>=150 && yPerson<200){
         if(x>y && x>z && x>w){
@@ -348,7 +351,6 @@ function draw() {
          score=0;
         nivel=1;
         scoreNivel=500;
-        velDoJogo=1;
       }
       }
       if(yPerson>200 && yPerson<250){
@@ -453,10 +455,6 @@ function draw() {
     
 //PERSONAGEM
     
-     contFrame++;
-    if(contFrame>5){
-      contFrame=0;
-    }
   image(person0,xPerson,yPerson,50,50);    
  
     //personagem MOVIMENTO
